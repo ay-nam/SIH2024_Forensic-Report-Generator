@@ -17,7 +17,7 @@ function App() {
           element={
             <div>
               <ImageDropzone />
-              <DynamicTextBoxes /> {/* Render the new component below the existing one */}
+              <DynamicTextBoxes /> 
             </div>
           }/>
            <Route path='/report' element={<ReportGenerator />} />
