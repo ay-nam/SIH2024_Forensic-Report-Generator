@@ -5,27 +5,24 @@ const TextBoxes = () => {
   const [numberOfBoxes, setNumberOfBoxes] = useState(0);
   const [textBoxes, setTextBoxes] = useState([]);
 
-  // Handle the input change to update the number of text boxes
   const handleChange = (event) => {
     const value = parseInt(event.target.value, 10);
 
     if (!isNaN(value) && value >= 0) {
       setNumberOfBoxes(value);
-      setTextBoxes(Array(value).fill('')); // Create an array of empty strings based on the entered number
+      setTextBoxes(Array(value).fill(''));
     } else {
       setNumberOfBoxes(0);
       setTextBoxes([]);
     }
   };
 
-  // Update the value of each text box
   const handleTextBoxChange = (index, event) => {
     const updatedTextBoxes = [...textBoxes];
     updatedTextBoxes[index] = event.target.value;
     setTextBoxes(updatedTextBoxes);
   };
 
-  // Submit data to backend
   const handleSubmit = async () => {
     try {
       const response = await fetch('/api/submit-textboxes', {
@@ -33,7 +30,7 @@ const TextBoxes = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ textBoxes }), // Sending the textBoxes array as JSON
+        body: JSON.stringify({ textBoxes }),
       });
 
       if (response.ok) {
@@ -51,7 +48,7 @@ const TextBoxes = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="text-boxes-container">
       <label htmlFor="number-input" style={{ marginRight: '10px' }}>
         Enter the number of text boxes:
       </label>
@@ -61,7 +58,7 @@ const TextBoxes = () => {
         value={numberOfBoxes}
         onChange={handleChange}
         min="0"
-        style={{ width: '50px', marginBottom: '20px' }}
+        className="text-box-input"
       />
       <div>
         {textBoxes.map((value, index) => (
@@ -71,30 +68,11 @@ const TextBoxes = () => {
             value={value}
             onChange={(event) => handleTextBoxChange(index, event)}
             placeholder={`Text Box ${index + 1}`}
-            style={{
-              display: 'block',
-              margin: '10px 0',
-              padding: '8px',
-              width: '300px',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-            }}
+            className="text-box-input"
           />
         ))}
       </div>
-      <button
-        onClick={handleSubmit}
-        style={{
-          marginTop: '20px',
-          padding: '10px 20px',
-          fontSize: '16px',
-          cursor: 'pointer',
-          borderRadius: '5px',
-          border: '1px solid #ccc',
-          backgroundColor: '#28a745',
-          color: '#fff',
-        }}
-      >
+      <button className="submit-button" onClick={handleSubmit}>
         Submit
       </button>
     </div>
