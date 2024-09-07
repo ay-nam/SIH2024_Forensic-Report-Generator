@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home'; // Importing Home Icon
 import ImageIcon from '@mui/icons-material/Image'; // Importing Image Icon
+import Logo from '../assets/Logo.jpeg';
 
 const View = () => {
   return (
@@ -21,7 +22,23 @@ const View = () => {
             aria-label="menu"
             sx={{ mr: 2 }}
           ></IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+
+          <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>
+            <img
+              src={Logo} 
+              
+              style={{
+                height: 40, // Adjust the height as needed
+                borderRadius: '50%', // Makes the image circular. Use a percentage or pixel value as needed.
+                border: '2px solid white', // Optional: Add a border around the image
+              }}
+            />
+          </Box>
+
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1,fontFamily: "sans-serif",fontWeight: 'bold',fontSize: '1.5rem',textAlign: 'center',
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)' }}>
             FORENSIC
           </Typography>
           
