@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 body {
   width: 100vw;
   height: 100vh;
   padding: 0;
   margin: 0;
 
+=======
+body{
+  margin: 0;
+  padding: 0;
+  width:100vw;
+>>>>>>> d523a5e49f42af93f5a5c795d6ba45264a8a9ac8
 }
