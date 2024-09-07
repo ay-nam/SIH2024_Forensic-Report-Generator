@@ -5,8 +5,17 @@ const ImageDropzone = () => {
   const [images, setImages] = useState([]);
 
   // Callback function to handle accepted files
-  const onDrop = useCallback((acceptedFiles) => {
-    const uploadedImages = acceptedFiles.map((file) =>
+  const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
+    // Filter out files that are not images
+    const imageFiles = acceptedFiles.filter((file) =>
+      file.type.startsWith('image/')
+    );
+
+    if (rejectedFiles.length > 0 || imageFiles.length < acceptedFiles.length) {
+      alert('Only image files are allowed.');
+    }
+
+    const uploadedImages = imageFiles.map((file) =>
       Object.assign(file, {
         preview: URL.createObjectURL(file), // Create a preview URL for displaying the image
       })
