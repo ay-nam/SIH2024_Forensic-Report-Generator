@@ -1,18 +1,26 @@
-import './App.css'
+// App.js
+import './App.css';
 import React from 'react';
-import {Routes , Router ,Route, BrowserRouter , Navigate} from 'react-router-dom';
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import ImageDropzone from './components/ImageDropzone';
+import DynamicTextBoxes from './components/TextBoxes'; // Import the new component
+
 function App() {
   return (
-    <>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<ImageDropzone/>}/>
+        <Route
+          path="/"
+          element={
+            <div>
+              <ImageDropzone />
+              <DynamicTextBoxes /> {/* Render the new component below the existing one */}
+            </div>
+          }
+        />
       </Routes>
     </BrowserRouter>
-      
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
