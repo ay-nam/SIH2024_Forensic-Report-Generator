@@ -12,7 +12,7 @@ export default function ReportGenerator() {
   };
 
   const fetchText = () => {
-    fetch('http://10.30.1.121:5000/reports')  
+    fetch('http://192.168.190.86:5000/reports')  
       .then(response => response.json())
       .then(data => {
         const fetchedText = data; // Assuming data is an array of text, join them together

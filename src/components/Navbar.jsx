@@ -6,14 +6,15 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
-import HomeIcon from '@mui/icons-material/Home'; // Importing Home Icon
-import ImageIcon from '@mui/icons-material/Image'; // Importing Image Icon
+import HomeIcon from '@mui/icons-material/Home'; 
+import ImageIcon from '@mui/icons-material/Image'; 
 import Logo from '../assets/Logo.jpeg';
 
 const View = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#4CAF50', width: '100vw' }}>
+      <AppBar position="static" sx={{ backgroundColor: '#2ce6a8', width: '100vw' }}>
+
         <Toolbar>
           <IconButton
             size="large"
