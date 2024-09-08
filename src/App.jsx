@@ -1,10 +1,9 @@
 import './App.css';
 import React from 'react';
 import {Routes ,Route, BrowserRouter , Navigate} from 'react-router-dom';
-import ImageDropzone from './components/ImageDropzone';
-import DynamicTextBoxes from './components/TextBoxes'; 
 import Navbar from './components/Navbar';
 import ReportGenerator from './pages/ReportGenerator';
+import Boxes from './components/Boxes';
 
 function App() {
   return (
@@ -15,8 +14,7 @@ function App() {
           path="/"
           element={
             <div>
-              <ImageDropzone />
-              <DynamicTextBoxes /> 
+              <Boxes/> 
             </div>
           }/>
            <Route path='/report' element={<ReportGenerator />} />
