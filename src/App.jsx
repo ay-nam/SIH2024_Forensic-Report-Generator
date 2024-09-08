@@ -1,7 +1,7 @@
 // App.js
 import './App.css';
 import React from 'react';
-import {Routes ,Route, BrowserRouter , Navigate} from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ReportGenerator from './pages/ReportGenerator';
 import Boxes from './components/Boxes';
@@ -9,17 +9,18 @@ import Boxes from './components/Boxes';
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
+      <Navbar />
       <Routes>
-      <Route
+        <Route
           path="/"
           element={
             <div>
-              <Boxes/> 
+              <Boxes />
             </div>
-          }/>
-           <Route path='/report' element={<ReportGenerator />} />
-          </Routes>
+          }
+        />
+        <Route path="/report" element={<ReportGenerator />} />
+      </Routes>
     </BrowserRouter>
   );
 }
