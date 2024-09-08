@@ -1,8 +1,23 @@
 .report-generator {
-    background-color: #f0f0f0;
-    height: 100vh;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .regenerate-button {
+    margin-top: -100px;
+    padding: 10px 20px;
+    background-color: #2ce6a8;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .regenerate-button:hover {
+    background-color: #28c095;
   }
   
