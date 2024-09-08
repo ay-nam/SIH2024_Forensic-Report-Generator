@@ -1,11 +1,13 @@
 // components/FormContainer.js
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../styles/box.css'; // Ensure this path is correct
 
 const FormContainer = () => {
   const [textBoxes, setTextBoxes] = useState([]);
   const [images, setImages] = useState([]);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   // Handle change in the number of text boxes
   const handleChange = (event) => {
@@ -66,11 +68,11 @@ const FormContainer = () => {
 
     // Append image files
     images.forEach((image) => {
-      formData.append('images', image);
+      formData.append('file', image); // Use 'file' key to match backend
     });
 
     try {
-      const response = await fetch('http://10.30.1.121:5000/upload', {
+      const response = await fetch('http://192.168.190.86:5000/upload', {
         method: 'POST',
         body: formData,
       });
@@ -79,6 +81,7 @@ const FormContainer = () => {
         const result = await response.json();
         console.log('Data submitted successfully:', result);
         alert('Data submitted successfully!');
+        navigate('/report'); // Navigate to report generator page
       } else {
         console.error('Failed to submit data:', response.statusText);
         alert('Failed to submit data.');
@@ -133,7 +136,7 @@ const FormContainer = () => {
               type="text"
               value={value}
               onChange={(event) => handleTextBoxChange(index, event)}
-              placeholder={`Inference`}
+              placeholder={`Inference ${index + 1}`}
               className="text-box-input"
               style={{ display: 'block' }}
             />
