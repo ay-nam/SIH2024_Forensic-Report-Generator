@@ -18,7 +18,11 @@ const Report = ({ text, speed = 100 }) => {
     return () => clearInterval(intervalId);
   }, [text, speed]);
 
-  return <div className="report-text">{displayedText}</div>; // Apply the class
+  return (
+    <div className="report-text-container">
+      <div className="report-text">{displayedText}</div>
+    </div>
+  );
 };
 
 export default Report;

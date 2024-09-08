@@ -1,7 +1,15 @@
+.report-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  /* Optional background color */
+}
+
 .report-text {
-    font-size: 27px;
-    color: #2ce6a8;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-  }
-  
+  font-size: 27px;
+  color: #2ce6a8;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-align: center; /* Center the text itself */
+}
