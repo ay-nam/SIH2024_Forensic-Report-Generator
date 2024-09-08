@@ -1,0 +1,114 @@
+/* General Form Container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Text Box Styles */
+.text-box-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.text-box-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Submit Button Styles */
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:active {
+  background-color: #004494;
+}
+
+/* Image Dropzone Styles */
+.dropzone-container {
+  background-color: #f0f0f0;
+  height: 120px;
+  width: 70vw; /* Reduced width */
+  max-width: 600px;
+  margin: 20px auto 50px auto; /* Adjusted margin for consistency */
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #ccc;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.dropzone-container.drag-active {
+  border-color: #00ff40;
+  background-color: #e0f7ff;
+}
+
+.dropzone-message {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+/* Image Preview and Removal Styles */
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.image-container {
+  position: relative;
+  margin: 5px;
+}
+
+.image-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.remove-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
