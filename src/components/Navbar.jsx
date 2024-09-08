@@ -36,7 +36,7 @@ const View = () => {
             />
           </Box>
 
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1,fontFamily: "sans-serif",fontWeight: 'bold',fontSize: '1.5rem',textAlign: 'center',
+          <Typography variant="h6" component="div" sx={{ flexGrow: 3,fontFamily: "Montserrat",fontWeight: 'bold',fontSize: '1.5rem',textAlign: 'center',
               position: 'absolute',
               left: '50%',
               transform: 'translateX(-50%)' }}>
@@ -51,7 +51,7 @@ const View = () => {
           </Link>
 
           {/* Image Button with Icon */}
-          <Link to={'/add'} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to={'/report'} style={{ textDecoration: 'none', color: 'inherit' }}>
             <Button color="inherit" startIcon={<ImageIcon />}>
               
             </Button>
